@@ -1,11 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const todoController = require("../controllers/todoController");
+const authMiddleware = require("../middleware/authMiddleware");
 
-router.get("/", todoController.getAllTodos);
-router.get("/:id", todoController.getTodoById);
-router.post("/", todoController.addTodo);
-router.delete("/:id", todoController.deleteTodo);
-router.put("/:id", todoController.updateTodo);
+router.post("/register", todoController.register); // ❌ No auth required
+router.post("/login", todoController.login);       // ❌ No auth required
+router.get("/", authMiddleware, todoController.getAllTodos);
+router.get("/:id", authMiddleware, todoController.getTodoById);
+router.post("/", authMiddleware, todoController.addTodo);
+router.delete("/:id", authMiddleware, todoController.deleteTodo);
+router.put("/:id", authMiddleware, todoController.updateTodo);
+
 
 module.exports = router;
