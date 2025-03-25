@@ -4,7 +4,7 @@ const app = express()
 const todoRoutes = require("./routes/todos")
 
 dotenv.config()
-const port = process.env.PORT || 3002;
+const port = process.env.PORT;
 
 app.use(express.json());
 
