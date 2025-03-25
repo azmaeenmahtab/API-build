@@ -1,19 +1,18 @@
-const express = require('express')
-const dotenv = require('dotenv')
-const app = express()
-const todoRoutes = require("./routes/todos")
+const express = require("express");
+const dotenv = require("dotenv");
+const todoRoutes = require("./routes/todoRoutes");
 
-dotenv.config()
-const port = process.env.PORT;
+dotenv.config();
+const app = express();
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use("/api/todos", todoRoutes);//main path of server
 
-app.get('/', (req, res) => {
-    res.send(`app is running on port ${port}`)
-})
-
-app.use("/api/todos", todoRoutes); // main path for my server 
+app.get("/", (req, res) => {
+    res.send(`App is running on port ${port}`);
+});
 
 app.listen(port, () => {
-    console.log(`todo app listening on port ${port}`)
+    console.log(`Todo app listening on port ${port}`);
 });
