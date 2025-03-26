@@ -67,7 +67,7 @@ router.post("/login", todoController.login);
 
 /**
  * @swagger
- * /todos:
+ * /:
  *   get:
  *     summary: Get all Todos for the authenticated user
  *     description: Retrieves all todo items belonging to the logged-in user.
@@ -103,7 +103,7 @@ router.get("/", authMiddleware, todoController.getAllTodos);
 
 /**
  * @swagger
- * /todos/{id}:
+ * /{id}:
  *   get:
  *     summary: Get a Todo by ID
  *     description: Retrieves a specific todo item for the authenticated user.
@@ -176,7 +176,7 @@ router.post("/", authMiddleware, todoController.addTodo);
 
 /**
  * @swagger
- * /todos/{id}:
+ * /{id}:
  *   delete:
  *     summary: Delete a Todo
  *     description: Deletes a specific todo item for the authenticated user.
@@ -205,7 +205,7 @@ router.delete("/:id", authMiddleware, todoController.deleteTodo);
 
 /**
  * @swagger
- * /todos/{id}:
+ * /{id}:
  *   put:
  *     summary: Update a Todo
  *     description: Updates a specific todo item for the authenticated user.
