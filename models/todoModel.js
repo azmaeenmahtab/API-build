@@ -54,6 +54,20 @@ const Todo = {
             [title, completed, id, userId]
         );
         return result.rows[0];
+    },
+
+    logout: async (token, expires_at) => {
+
+        const result = await db.query("INSERT INTO blacklisted_tokens (token, expires_at) VALUES ($1, $2)", [token, expires_at]);
+
+        return result.rows[0];
+    },
+
+    isBlacklisted: async (token) => {
+
+        const result = await db.query("SELECT * FROM blacklisted_tokens WHERE token = $1", [token]);
+
+        return result.rows.length > 0;
     }
 };
 

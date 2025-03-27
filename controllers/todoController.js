@@ -1,6 +1,8 @@
 const Todo = require("../models/todoModel");
 const bcrypt = require("bcrypt");
+const dotenv = require("dotenv");
 
+dotenv.config();
 //register
 exports.register = async (req, res) => {
     try {
@@ -119,3 +121,24 @@ exports.updateTodo = async (req, res) => {
         res.status(500).json({ error: "Internal Server Error" });
     }
 };
+
+//logout
+exports.logout = async (req, res) => {
+    const token = req.header("Authorization")?.split(" ")[1];
+    if (!token) {
+        return res.status(400).json({ message: "No token provided" });
+    }
+
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const expiryTime = new Date(decoded.exp * 1000); // Convert to a valid timestamp
+
+        await Todo.logout(token, expiryTime);
+        return res.status(200).json({ message: "Logged out successfully. Token is now blacklisted." });
+    } catch (error) {
+        return res.status(500).json({ error: "Internal server error, can't log out user" });
+    }
+};
+
+
+

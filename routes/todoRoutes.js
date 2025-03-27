@@ -245,5 +245,25 @@ router.delete("/:id", authMiddleware, todoController.deleteTodo);
  */
 router.put("/:id", authMiddleware, todoController.updateTodo);
 
+/**
+ * @swagger
+ * /logout:
+ *   post:
+ *     summary: Log out the user
+ *     description: Invalidates the user session (if using session) or suggests token removal.
+ *     tags:
+ *       - Auth
+ *     security:
+ *       - BearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Successfully logged out
+ *       401:
+ *         description: Unauthorized - No token provided
+ *       500:
+ *         description: Internal Server Error
+ */
+router.post("/logout", authMiddleware, todoController.logout);
+
 
 module.exports = router;
