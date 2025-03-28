@@ -17,8 +17,16 @@ npm install
 
 ### **3. Setup Environment Variables**
 Create a **.env** file in the project root and add the required variables as per **.env.example**.
-I have provided every environment variables with proper value you need. If you want to configure your database and secret keys separately you can do so.
+I have provided every environment variables with proper value you need. If you want to configure your database and secret keys separately you can do so. Then you have to Replace root, localhost, yourpassword and postgres with your actual PostgreSQL credentials. Replace your_jwt_secret_key with anything you want. 
 
+PORT=6543
+DB_USER= 
+DB_PASSWORD= 
+DB_HOST= 
+DB_NAME= 
+DB=postgres
+SUPABASE_DB_URL= 
+JWT_SECRET=
 
 ### **4. Setup Database**
 Run the database migrations (if applicable) or manually create the tables:
@@ -61,14 +69,10 @@ http://localhost:6543/api-docs
 ### **1. Deploying the API**
 You can deploy this API using **Heroku, Render, Vercel, or a VPS**.
 
-Example (for Heroku):
-```sh
-git push heroku main
-```
 
 ### **2. Deployed API & Swagger Documentation**
-- **API Base URL:** `<your-deployed-api-url>`
-- **Swagger Docs:** `<your-deployed-api-url>/api-docs`
+- **API Base URL:** `https://todo-app-api-build.vercel.app/`
+- **Swagger Docs:** `http://localhost:6543/api-docs/`
 
 ## **Contributing**
 Feel free to fork the repo, create a branch, and submit a **pull request**!
