@@ -20,13 +20,18 @@ Create a **.env** file in the project root and add the required variables as per
 I have provided every environment variables with proper value you need. If you want to configure your database and secret keys separately you can do so. Then you have to Replace root, localhost, yourpassword and postgres with your actual PostgreSQL credentials. Replace your_jwt_secret_key with anything you want. 
 
 PORT=6543 
+DB_USER=
 
-DB_USER= 
-DB_PASSWORD= 
-DB_HOST= 
+DB_PASSWORD=
+
+DB_HOST=
+
 DB_NAME= 
+
 DB=postgres
-SUPABASE_DB_URL= 
+
+SUPABASE_DB_URL=
+
 JWT_SECRET=
 
 ### **4. Setup Database**
