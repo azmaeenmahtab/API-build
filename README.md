@@ -44,6 +44,8 @@ Ensure the following tables exist:
 - `todolist (id, user_id, title, completed)`
 - `blacklisted_tokens (id, token, expires_at)`
 
+Or use my supabase , given all necessary credentials in .env.example file.
+
 ### **5. Start the Server**
 ```sh
 npm start or node server.js
