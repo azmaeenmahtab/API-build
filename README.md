@@ -17,19 +17,8 @@ npm install
 
 ### **3. Setup Environment Variables**
 Create a **.env** file in the project root and add the required variables as per **.env.example**.
+I have provided every environment variables with proper value you need. If you want to configure your database and secret keys separately you can do so.
 
-```sh
-cp .env.example .env
-```
-Edit the `.env` file and configure your database and secret keys:
-```env
-PORT=6543
-DB_HOST=localhost
-DB_USER=your_db_user
-DB_PASS=your_db_password
-DB_NAME=your_db_name
-JWT_SECRET=your_secret_key
-```
 
 ### **4. Setup Database**
 Run the database migrations (if applicable) or manually create the tables:
