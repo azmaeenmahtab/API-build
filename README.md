@@ -2,28 +2,6 @@
 
 This is a **Node.js REST API** for a Todo application, following the **MVC (Model-View-Controller) pattern**. It includes **user authentication**, **CRUD operations for todos**, and **JWT-based authentication with token blacklisting for logout**.
 
-## **Features**
-- User Registration & Login (JWT Authentication)
-- Create, Read, Update, Delete (CRUD) for todos
-- User-specific todo access
-- Logout functionality with token blacklisting
-- API documentation using Swagger
-
-## **Project Structure**
-```
-📦 Todo App API
-├── 📂 config             # Database configuration
-├── 📂 controllers        # Route controllers
-├── 📂 models             # Database models
-├── 📂 routes             # API routes
-├── 📂 middleware         # Authentication middleware
-├── 📂 docs               # Swagger API documentation
-├── .env.example         # Example environment variables file
-├── server.js            # Entry point of the app
-├── package.json         # Dependencies and scripts
-├── README.md            # Project documentation
-```
-
 ## **Installation & Setup**
 
 ### **1. Clone the Repository**
