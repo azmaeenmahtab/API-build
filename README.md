@@ -43,7 +43,7 @@ Ensure the following tables exist:
 
 ### **5. Start the Server**
 ```sh
-npm start
+npm start or node server.js
 ```
 The API should now be running on `http://localhost:6543`.
 
@@ -61,11 +61,11 @@ http://localhost:6543/api-docs
 - `POST /logout` - User logout (JWT token blacklisting)
 
 ### **Todos**
-- `GET /todos` - Get all todos for the logged-in user
-- `GET /todos/:id` - Get a specific todo
-- `POST /todos` - Create a new todo
-- `PUT /todos/:id` - Update a todo
-- `DELETE /todos/:id` - Delete a todo
+- `GET /` - Get all todos for the logged-in user
+- `GET /:id` - Get a specific todo
+- `POST /` - Create a new todo
+- `PUT /:id` - Update a todo
+- `DELETE /:id` - Delete a todo
 
 ## **Deployment & API Links**
 
